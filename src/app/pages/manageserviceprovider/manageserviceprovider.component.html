@@ -1,0 +1,487 @@
+<app-header></app-header>
+
+<div class="main-contaner">
+    <app-sidebar></app-sidebar>
+    <div class="main_background">
+    <div class="l-main-content">
+        <div class="page_main_top_heading ">
+            <h1>Manage Service Provider</h1>
+        </div>
+        <div class="sec_add_btn">
+            <button (click)="goToSignup()">Create New</button>
+          </div>
+        <div class="main_sec_shad">
+          <div class="top_searc_sec">
+              <div class="searc_inner">
+                  <ul>
+                      <li>
+                          Search:
+                      </li>
+                      <li>
+                          <select>
+                              <option>All</option>
+                              <option>Name</option>
+                              <option>Email</option>
+                          </select>
+                      </li>
+                      <li><input type="text" placeholder="Keyword"></li>
+                      <li>
+                          <select>
+                              <option>Select Status</option>
+                              <option>Active</option>
+                              <option>Inactive</option>
+                              <option>Deleted</option>
+                          </select>
+                      </li>
+                      <li>
+                          <div class="searh_inn_btn">
+                              <button>Search</button>
+                              <button>Reset</button>
+                          </div>
+                      </li>
+                  </ul>
+
+              </div>
+              <div class="sec_add_btn">
+                <button (click)="goToaddserviceprovider()">Add</button>
+              </div>
+          </div>
+
+         
+          <div class="table-responsive">
+            <table class="manage_service_pro">
+                <thead>
+                        <tr>
+                                <th>Profilepic</th>
+                                <th>Fullname</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Contact</th>
+                                <th>Status</th>
+                                <th>ServiceRating</th>
+                                </tr>
+                 </thead>
+                 <tbody>
+                             <tr *ngFor="let user of users">
+                                    <td><img [src]= 'imageurl+users.profilePic'  /></td>
+                                    <td>{{ user.firstName }} &nbsp; {{ user.lastName }} </td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.gender }}</td>
+                                    <td>{{ user.contact }}</td>
+                                    <td>
+                                        <label class="switch_button">
+                                            <input type="checkbox" [checked]="user.status" > 
+                                          
+                                            <span class="slider"></span>
+                                        </label></td>
+                                    <td>
+                                        <p *ngIf="user.serviceRatings==0 ; else showrating">Not Available</p>
+                                        <ng-template #showrating>
+                                                <p>{{ user.serviceRatings }}
+                                                     <i class="fa fa-star" style="color:Red" aria-hidden="true"></i>
+                                                </p>
+                                        </ng-template>
+                                        
+                                        
+                                    </td>
+                                        <td>
+                                            <div class="tbl_acti_btn">
+                                                <ul>
+                                                    <li>
+                                                            <i (click)="viewUser()" class="fa fa-eye"></i>
+                                                    </li>
+                                                    <li>
+                                                            <i (click)="editServiceUsers(user.id)" class="fa fa-pencil"></i>
+                                                    </li>
+                                                    <li>
+                                                            <i (click)="deleteUser()" class="fa fa-trash"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                </tr>
+                                
+            
+                 </tbody>
+                  <!--
+                    <tr>
+                    <th> <input type="checkbox" name="vehicle2" value="Car"></th>
+                    <th>Profile</th>
+                    <th>Name</th>
+                    <th>Id</th>
+                    <th>Pending</th>
+                 
+                    <th>Message</th>
+                    <th>Block/unblock</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr class="even">
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr class="even2">
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr class="even3">
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr class="even3">
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr class="even3">
+                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
+                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
+                        <td>Jhon Due</td>
+                        <td>jhon123@gmail.com</td>
+                        <td><select>
+                            <option>Pending</option>
+                            <option>Accept</option>
+                            <option>rejected</option>
+                        </select></td>
+                  
+                        <td><textarea>hloo how r u </textarea></td>
+                        <td>
+                         <select>
+                        <option>Block</option>
+                        <option>Unblock</option></select>
+                        </td>
+                            <td>
+                                <div class="tbl_acti_btn">
+                                    <ul>
+                                        <li>
+                                                <i class="fa fa-eye"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-pencil"></i>
+                                        </li>
+                                        <li>
+                                                <i class="fa fa-trash"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                    </tr>
+                        
+                </tbody>
+            -->
+            </table>
+            </div>
+          <div class="pagination">
+              <div class="show_page">
+                  <p>Show Page 1 to 12</p>
+              </div>
+              <div class="pagination_num">
+                  <ul>
+                      <li>
+                          Pervious
+                      </li>
+                      <li>
+                            1
+                        </li>
+                        <li>
+                                2
+                            </li>
+                            <li>
+                                    3
+                                </li>
+                                <li>
+                                    4
+                                    </li>
+                                    <li>
+                                            Next
+                                        </li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        

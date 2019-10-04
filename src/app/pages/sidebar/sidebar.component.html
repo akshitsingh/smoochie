@@ -1,0 +1,98 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu tree" data-widget="tree">
+            <li [class.active]="activeTab=='1'" class="treeview1" (click)="goTodashboard('1')">
+                <a>
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same dashboard"></div>
+                        <div class="left_des">
+                            <span>Dashboard</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li [class.active]="activeTab=='2'" class="treeview1">
+                <a (click)="goToManageUser('2')">
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same reportingIcons"> </div>
+                        <div class="left_des">
+                            <span>Reporting</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li [class.active]="activeTab=='3'" class="treeview1">
+                <a (click)="goTomanageuser('3')">
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same manage_user"></div>
+                        <div class="left_des">
+                            <span>Manage Users</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li [class.active]="activeTab=='4'" class="treeview1">
+                <a (click)="goTomanageserviceprovider('4')">
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same Schedule"></div>
+                        <div class="left_des">
+                            <span>Manage Service Provider</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            
+            <li [class.active]="activeTab=='6'" class="treeview1">
+                <a (click)="goTobookingmanagement()">
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same report_manage"></div>
+                        <div class="left_des">
+                            <span>Booking Management:</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        
+        
+            <li [class.active]="activeTab=='9'" class="treeview1">
+                <a (click)="goToManageCarCategory('9')">
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same man_payme"></div>
+                        <div class="left_des">
+                            <span>Manage Payment</span>
+                            <img src="../../assets/images/tabel action/drop-down-arrow.png" data-toggle="collapse"
+                                data-target="#products" class="collapsed">
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <ul class="sub-menu collapse" id="products">
+                <li class="active"><a (click)="goTomanagepayment()">Manage Payment</a></li>
+                <li><a (click)="goTomanageservicefee()">Manage Service Fee</a></li>
+            </ul>
+
+            <li class="treeview1">
+                <a (click)="goTologinpage()">
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same log_out"></div>
+                        <div class="left_des">
+                            <span>Manage Reviews</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+     
+            <li class="treeview1">
+                <a (click)="goTologinpage()">
+                    <div class="menu_icon_main">
+                        <div class="menu_icon_same log_out"></div>
+                        <div class="left_des">
+                            <span>Logout</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
+</aside>

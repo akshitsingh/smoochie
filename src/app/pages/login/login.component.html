@@ -1,0 +1,27 @@
+<div class="body_wrap">
+    <div class="loginapge">
+        <div class="contaIner">
+            <div class="login_page">
+                <div class="top_logo">
+                <img src="../../assets/images/logo.png" />
+                </div>
+                <div class="log_in_form">
+                <h1>Log In</h1>
+                <div class="form_part">
+                    <div class="input_box">
+                        <input type="email" placeholder="Email" name="email" [(ngModel)]="admin.email">
+                    </div>
+                    <div class="input_box">
+                        <input  type="password" placeholder="Password" name="password" [(ngModel)]="admin.password">
+                    </div>
+                
+                    <div class="input_box submit_box">
+                        <button (click)="login()" class="frgt-psswrd">login</button>
+                    </div>
+                    <div class="forgot_password"><a (click)="goToforgetpassword()">Forgot Password</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

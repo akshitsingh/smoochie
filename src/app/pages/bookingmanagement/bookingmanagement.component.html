@@ -1,0 +1,31 @@
+<app-header></app-header>
+ 
+<div class="main-contaner">
+    <app-sidebar></app-sidebar>
+    <div class="main_background">
+ <div class="table-responsive">
+       <table class="table">
+               <tr>
+                   <th>Profile Pic</th>
+                   <th>Name</th>
+                   <th>Service Ratings</th>
+                   <th>Status</th>
+                   <th>HouseName</th>
+                   <th>HouseNo</th>
+                   <th>Date</th>
+                   <th>Shedule</th>
+               </tr>
+               <tr *ngFor="let user of users">
+                   <td><img [src]="imageurl+user.serviceId.profilePic" alt=""></td>
+                   <td>{{ user.serviceId.firstName }} &nbsp; {{ user.serviceId.lastName }}</td>
+                   <td>{{ user.serviceId.serviceRatings }}</td>
+                   <td>{{ user.status }}</td>
+                   <td>{{ user.houseName }}</td>
+                   <td>{{ user.houseNumber }}</td>
+                   <td>{{ user.date | date 'YYYY-MM-DDTHH:mm' }}</td>
+                   <td>{{ user.schedule }}</td>
+               </tr>
+       </table>
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,74 @@
+<app-header></app-header>
+
+ <div class="main-contaner">
+     <app-sidebar></app-sidebar>
+     <div class="main_background">
+     <div class="l-main-content">
+         <div class="page_main_top_heading addservicemain">
+             <h1>Manage Admin</h1>
+             <button (click)="goTomanageserviceprovider()">Back to listing</button> 
+         </div>
+           
+         
+         <div class="main_sec_shad">
+           <div class="viw_usr_img">
+               <label>image *</label>
+               <img src="../../assets/images/user.png">
+           </div> 
+           <div class="user_edit_list">
+               <ul>
+                   <li>
+                       <label>First Name *</label>
+                       <input type="text" name="firstname" [(ngModel)]="users.firstName" placeholder="Name"  >
+                   </li>
+                   <li>
+                        <label>Last Name *</label>
+                        <input type="text" name="lastname" [(ngModel)]="users.lastName" placeholder="Name">
+                    </li>
+                   <li>
+                     <label>Email *</label>
+                     <input type="text" name="email"  [(ngModel)]="users.email" placeholder="Email">
+                 </li>
+               
+                 <li>
+                  <label>Contact *</label>
+                  <input type="text" name="contact" [(ngModel)]="users.contact" placeholder="contact">
+                 </li>
+                 <li>
+                  <label>Gender *</label>
+                 <select name="gender" [(ngModel)]="users.gender"  id="gender">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                 </select>
+              </li>
+                <li>
+
+                     <label>Status *</label>
+                     <br>
+                     <label class="switch_button">
+                            <input type="checkbox" [checked]="users.status" [(ngModel)]="users.status"> 
+                            <span class="slider"></span>
+                     </label>
+              </li>
+               </ul>
+           </div>
+           <div class="view_user_btn">
+               <ul>
+                   <li>
+                     <button (click)="updateServiceUser(users)">Update</button>
+                 </li>
+                 <li>
+                     <button>cancel</button>
+                 </li>
+               </ul>
+           </div>
+           
+          
+        
+         </div>
+         </div>
+         </div>
+         </div>
+ 
+ 
+ 

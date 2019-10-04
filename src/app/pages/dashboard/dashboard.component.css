@@ -1,0 +1,16 @@
+section.dash_chart_sec ul {display: flex;justify-content: space-between;width: 100%;flex-wrap: wrap;}
+section.dash_chart_sec ul li:nth-child(1){width:66%;}
+section.dash_chart_sec ul li:nth-child(2){width:32%;}
+section.dash_chart_sec ul li:nth-child(3){width:32%;margin:2rem 0px !important;}
+section.dash_chart_sec ul li:nth-child(4){width:32%;margin:2rem 0px !important;}
+section.dash_chart_sec ul li:nth-child(5){width:32%;margin:2rem 0px !important;}
+section.dash_chart_sec ul li:nth-child(6){width:49%;}
+section.dash_chart_sec ul li:nth-child(7){width:49%;}
+.dash_firt_chart img {width: 100%;}
+section.dash_chart_sec {margin: 3rem 0;}
+.dash_sec_chart img {width: 100%;}
+.dash_third_chart img {width: 100%;}
+.dash_four_chart img {width: 100%;}
+.dash_five_chart img {width: 100%;}
+.dash_six_chart img {width: 100%;}
+.dash_seven_chart img {width: 100%;}

@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<div class="main-contaner">
+    <app-sidebar></app-sidebar>
+    <div class="main_background">
+    <div class="l-main-content">
+        <div class="page_main_top_heading addservicemain">
+            <h1>Manage Admin</h1>
+            <button (click)="goTomanageserviceprovider()">Back to listing</button> 
+        </div>
+          
+        
+        <div class="main_sec_shad">
+          <div class="viw_usr_img">
+              <label>image *</label>
+              <img src="../../assets/images/user.png">
+          </div> 
+          <div class="user_edit_list">
+              <ul>
+                  <li>
+                      <label>Name *</label>
+                      <input type="text" placeholder="Name">
+                  </li>
+                  <li>
+                    <label>Email *</label>
+                    <input type="text" placeholder="Email">
+                </li>
+                <li>
+                    <label>Activity *</label>
+                  <select>
+                      <option>
+                          <select>Active</select>
+                          <select>Inactive</select>
+                      </option>
+                  </select>
+                </li>
+                <li>
+                    <label>Status *</label><br>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                      </label>
+                </li>
+                <li>
+                    <label>text updates *</label>
+                    <textarea placeholder="Text"></textarea>
+                </li>
+                <li>
+                    <label>Events Detail *</label>
+                    <textarea placeholder="Text"></textarea>
+                </li>
+              </ul>
+          </div>
+          <div class="view_user_btn">
+              <ul>
+                  <li>
+                      <button>add user</button>
+                  </li>
+                  <li>
+                    <button>Reset</button>
+                </li>
+                <li>
+                    <button>cancel</button>
+                </li>
+              </ul>
+          </div>
+          
+         
+       
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
