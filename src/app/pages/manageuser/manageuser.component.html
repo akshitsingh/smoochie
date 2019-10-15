@@ -41,7 +41,7 @@
 
               </div>
               <div class="sec_add_btn">
-                <button (click)="goToaddmanageuser()">Add</button>
+                <button routerLink='registeruser'>Add</button>
               </div>
           </div>
           
@@ -54,19 +54,18 @@
                     <th>Email</th>
                     <th>Countrycode</th>
                     <th>Calltype</th>
-                    <th>Status</th>
                     <th>Area</th>
                     <th>UserRating</th>
+                    <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let user of users">
+                    <tr *ngFor="let user of collection | paginate: config">
                         <td><img [src]= 'imageurl+user.profilePic'  /></td>
                         <td>{{ user.nickName }}</td>
                         <td>{{ user.email }}</td>
                         <td>{{ user.countryCode }}</td>
-                        <td>{{ user.callType }}</td>
-                         
+                         <td>{{ user.callType }}</td>
                         <td>{{ user.area }}</td>
                         <td>{{ user.userRatings }}<i class="fa fa-star" style="color:Red" aria-hidden="true"></i></td>
                             <td>
@@ -83,265 +82,15 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </td>
+                        </td>
                     </tr>
-                    
-
-            <!-- 2nd row start>
-                <tr>
-                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
-                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
-                        <td>Jhon Due</td>
-                        <td>jhon123@gmail.com</td>
-                        <td>hp to osal</td>
-                        <td><select>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select></td>
-                        <td>$20</td>
-                        <td>
-                            <label class="switch_button">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label></td>
-                            <td>
-                                <div class="tbl_acti_btn">
-                                    <ul>
-                                        <li>
-                                                <i class="fa fa-eye"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-pencil"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-trash"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
-                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
-                        <td>Jhon Due</td>
-                        <td>jhon123@gmail.com</td>
-                        <td>hp to osal</td>
-                        <td><select>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select></td>
-                        <td>$20</td>
-                        <td>
-                            <label class="switch_button">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label></td>
-                            <td>
-                                <div class="tbl_acti_btn">
-                                    <ul>
-                                        <li>
-                                                <i class="fa fa-eye"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-pencil"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-trash"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
-                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
-                        <td>Jhon Due</td>
-                        <td>jhon123@gmail.com</td>
-                        <td>hp to osal</td>
-                        <td><select>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select></td>
-                        <td>$20</td>
-                        <td>
-                            <label class="switch_button">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label></td>
-                            <td>
-                                <div class="tbl_acti_btn">
-                                    <ul>
-                                        <li>
-                                                <i class="fa fa-eye"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-pencil"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-trash"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
-                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
-                        <td>Jhon Due</td>
-                        <td>jhon123@gmail.com</td>
-                        <td>hp to osal</td>
-                        <td><select>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select></td>
-                        <td>$20</td>
-                        <td>
-                            <label class="switch_button">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label></td>
-                            <td>
-                                <div class="tbl_acti_btn">
-                                    <ul>
-                                        <li>
-                                                <i class="fa fa-eye"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-pencil"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-trash"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
-                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
-                        <td>Jhon Due</td>
-                        <td>jhon123@gmail.com</td>
-                        <td>hp to osal</td>
-                        <td><select>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select></td>
-                        <td>$20</td>
-                        <td>
-                            <label class="switch_button">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label></td>
-                            <td>
-                                <div class="tbl_acti_btn">
-                                    <ul>
-                                        <li>
-                                                <i class="fa fa-eye"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-pencil"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-trash"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
-                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
-                        <td>Jhon Due</td>
-                        <td>jhon123@gmail.com</td>
-                        <td>hp to osal</td>
-                        <td><select>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select></td>
-                        <td>$20</td>
-                        <td>
-                            <label class="switch_button">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label></td>
-                            <td>
-                                <div class="tbl_acti_btn">
-                                    <ul>
-                                        <li>
-                                                <i class="fa fa-eye"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-pencil"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-trash"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="vehicle2" value="Car"></td>
-                        <td class=" user_img"><img src="../../assets/images/user_black.png"></td>
-                        <td>Jhon Due</td>
-                        <td>jhon123@gmail.com</td>
-                        <td>hp to osal</td>
-                        <td><select>
-                            <option>Active</option>
-                            <option>Inactive</option>
-                        </select></td>
-                        <td>$20</td>
-                        <td>
-                            <label class="switch_button">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label></td>
-                            <td>
-                                <div class="tbl_acti_btn">
-                                    <ul>
-                                        <li>
-                                                <i class="fa fa-eye"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-pencil"></i>
-                                        </li>
-                                        <li>
-                                                <i class="fa fa-trash"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                    </tr> -->
                 </tbody>
             </table>
-            </div>
-          <div class="pagination">
-              <div class="show_page">
-                  <p>Show Page 1 to 12</p>
-              </div>
-              <div class="pagination_num">
-                  <ul>
-                      <li>
-                          Pervious
-                      </li>
-                      <li>
-                            1
-                        </li>
-                        <li>
-                                2
-                            </li>
-                            <li>
-                                    3
-                                </li>
-                                <li>
-                                    4
-                                    </li>
-                                    <li>
-                                            Next
-                                        </li>
-                  </ul>
-              </div>
-          </div>
+            <div class="list">
+              <pagination-controls (pageChange)="pageChange($event)" id="foo" class="my-pagination">
+              </pagination-controls>
+            </div>  
+        </div> <!--table div-->
         </div>
         </div>
         </div>

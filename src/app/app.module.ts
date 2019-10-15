@@ -20,11 +20,18 @@ import { ApiService } from './services/api.service';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs'; 
 import { HttpClient } from 'selenium-webdriver/http';
-import { AviComponent } from './pages/avi/avi.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete"
 import { RegisteruserComponent } from './pages/registeruser/registeruser.component';
 import { EditserviceusersComponent } from './pages/editserviceusers/editserviceusers.component';
 import { EditmanageusersComponent } from './pages/editmanageusers/editmanageusers.component';
 import { BookingmanagementComponent } from './pages/bookingmanagement/bookingmanagement.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { EditbookingmanagementComponent } from './pages/editbookingmanagement/editbookingmanagement.component';
+import { CreatebookingComponent } from './pages/createbooking/createbooking.component';
+import { PaginationComponent } from './pages/pagination/pagination.component';
+import {NgxPaginationModule} from 'ngx-pagination';
  
  
  
@@ -44,18 +51,27 @@ import { BookingmanagementComponent } from './pages/bookingmanagement/bookingman
     ManageservicefeeComponent,
     ManageserviceproviderComponent,
     AddserviceproviderComponent,
-    AviComponent,
     RegisteruserComponent,
     EditserviceusersComponent,
     EditmanageusersComponent,
-    BookingmanagementComponent
+    BookingmanagementComponent,
+    EditbookingmanagementComponent,
+    CreatebookingComponent,
+    PaginationComponent,
+    
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDatepickerModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule,
+    BrowserAnimationsModule,
+    GooglePlaceModule,
+    NgxPaginationModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

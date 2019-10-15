@@ -1,0 +1,119 @@
+ 
+<app-header></app-header>
+
+ <div class="main-contaner"  (click)="hideSearch($event)">
+     <app-sidebar></app-sidebar>
+     <div class="main_background">
+     <div class="l-main-content">
+         <div class="page_main_top_heading addservicemain">
+              
+         </div>
+           
+         
+         <div class="main_sec_shad">
+           <!-- <div class="viw_usr_img">
+               <label>image *</label>
+               <img src="../../assets/images/user.png">
+           </div>  -->
+           <div class="user_edit_list">
+                <form #fo="ngForm" (ngSubmit)="onSubmit(fo)">
+               <ul>   
+                   <li>
+                       <label>UserId *</label>
+                       <input type="text" name="useremail"  ngModel #userid="ngModel" [value]="username"  placeholder="userid..." 
+                       (keyup)="searchUser(userid)" autocomplete="off">
+                  
+                       <div class="search-results" [hidden]="showSearchResultsofusers" >
+                                <p [hidden]="noresults" class="text-center"> no results found !</p>
+                               <p *ngFor="let user of searchResultsofusers"  (click)="selectuser(user.nickName,user._id)" >
+                                   {{ user.nickName }} &nbsp;{{ user.email }}
+                               </p>     
+                        </div>
+                    </li>
+                   
+           
+                    
+                 
+                   <li>
+                        <label>ServiceId *</label>
+                        <input type="text" name="serviceemail" ngModel #serviceid="ngModel" [value]="finalname" placeholder="Serviceid..."
+                        (keyup)="searchService(serviceid)" autocomplete="off" >
+                        <div class="search-results" [hidden]="showSearchResultsofservice"  >
+                            <p [hidden]="noresults" class="text-center">no results found</p>
+                           <p *ngFor="let user of searchResultsofservice" (click)="selectService(user.firstName,user.lastName,user._id)">
+                               {{ user.firstName }} &nbsp;{{ user.lastName }} &nbsp; {{ user.email }}
+                           </p>     
+                    </div>
+                    </li>
+                    
+
+
+                   <li>
+                     <label>Location *</label> 
+                     <input ngx-google-places-autocomplete [options]="{
+                        types: [],
+                        componentRestrictions: { country: 'IN' }
+                        }" #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+                   </li>
+               
+                 <li>
+                  <label>Schedule *</label>
+                  <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" 
+                name="schedule" ngModel #dt1="ngModel" (dateTimeInput)="emitValue($event)" placeholder="Date Time"
+                autocomplete="off">
+                     <owl-date-time #dt1></owl-date-time>
+                 </li>
+
+
+                   <li>
+                        <label>House Name*</label>
+                        <input type="text" name="houseName" ngModel #housename="ngModel"   placeholder="Housename">
+                    </li>
+
+                    <li>
+                            <label>House No *</label>
+                            <input type="text" name="houseNumber" ngModel #houseno="ngModel"   placeholder="Name">
+                        </li>
+
+
+                        <li>
+                                <label>Contact *</label>
+                                <input type="text" name="contact" ngModel #contact="ngModel" placeholder="contact">
+                            </li>
+                       
+                         
+                        <li></li>
+                        <div class="view_user_btn">
+                           <li>
+                            <button class="btn btn-lg btn-primary" type="submit">create</button>      
+                            </li>
+                            <li>
+                                <button class="btn btn-lg btn-primary" (click)="cancel">cancel</button>      
+                                </li>
+                                
+                            
+                        </div>        
+                            
+                       </ul>
+               </form>
+           </div>
+
+
+           <!-- <div class="view_user_btn">
+               <ul>
+                   <li>
+                     <button (click)="createBooking()">Create</button>
+                 </li>
+                 <li>
+                     <button>cancel</button>
+                 </li>
+               </ul>
+           </div>
+            -->
+           
+         </div>
+         </div>
+         </div>
+         </div>
+ 
+ 

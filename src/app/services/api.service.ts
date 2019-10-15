@@ -20,29 +20,58 @@ export class ApiService {
   loginUser(data){
    return this.http.post(this.baseurl+'api/admin/login',data);
   }
-  manageUser(){
-    return this.http.get(this.baseurl+"api/admin/displayUsers");
+
+  getManageUser(page:any){
+    return this.http.post(this.baseurl+"api/admin/displayUsers",page);
   }
-  getManageUser(id: any){
-    return this.http.get(`${this.baseurl}api/admin/displayParticularUser/${id}`)
+
+  getParticularManageUser(id: any){
+    return this.http.get(`${this.baseurl}api/admin/displayParticularUser/${id}`);
   }
+
+  getParticularBooking(id:any){
+    return this.http.get(`${this.baseurl}api/admin/displayParticularBooking/${id}`);
+  }
+
+  getallusersByemail(data: any){
+    return this.http.post(`${this.baseurl}api/admin/searchUsers`,data);
+  }
+
+  getallserviceByemail(data: any){
+    return this.http.post(`${this.baseurl}api/admin/searchServices`,data);
+  }
+
+
   updateManageUser(data: any){
     return this.http.put(`${this.baseurl}api/admin/editUser`,data);
   }
-  manageServiceProvider(){
-    return this.http.get(this.baseurl+"api/admin/displayServices");
+
+
+  getallManageServiceProvider(page: any){
+    return this.http.post(this.baseurl+"api/admin/displayServices",page);
   }
+
+
   registerUser(body:any){
    return this.http.post(this.baseurl+"api/admin/registerUser",body);
   }
-   getManageServiceProvider(id:any){
+
+
+   getParticularManageServiceProvider(id:any){
      return this.http.get(`${this.baseurl}api/admin/displayServices/${id}`);
    }
+
+
    updateManageServiceProvider(data: any){
      return this.http.put(`${this.baseurl}api/admin/editService`,data);
    }
-   getBookingManagement(data: any){
+
+   getallBookingManagement(data: any){
      return this.http.post(`${this.baseurl}api/admin/displayBookings`,data);
+   }
+
+   createBooking(data:any){
+    return this.http.post(`${this.baseurl}api/user/createBooking`,data);
    }
   }
 

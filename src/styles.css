@@ -1,3 +1,4 @@
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 /* You can add global styles to this file, and also import other style files */
 *{list-style:none;margin:0px; padding:0px;outline:none !important;}
 body {overflow:auto ;font-family: 'Roboto', sans-serif;-webkit-font-smoothing: antialiased;}
@@ -419,7 +420,7 @@ ul.right_nav_links li img {width: 15px !important;height: 15px !important;}
 .right_admin_user {display: flex !important;justify-content: flex-end !important;width: 100% !important;}
 .page_main_top_heading {flex-direction: row;}
 .main-contaner {padding:60px 0px 0px 0px}
-.main-sidebar {height: 88vh;}
+.main-sidebar {height: 100vh;}
 .log_in_form {width: 65% !important;}
 }
 /*****end Responsive*****/
@@ -430,9 +431,45 @@ margin-bottom: 2rem !important;
 }
 .cancel_btn {width: 47% !important;}
 .log_in_form h1 {font-size: 26px !important;}
+.user_edit_list ul li {
+    width: 100% !important;
+    margin-left: 0px !important;}
+    .user_edit_list ul li:nth-child(2) {
+        margin-left: 0rem !important;
+    }
+    .user_edit_list ul li:nth-child(4) {
+        margin-left: 0rem !important;
+    }
+    .user_edit_list ul li:nth-child(6) {
+        margin-left: 0rem !important;
+    }
+    .user_edit_list ul li:nth-child(8) {
+        margin-left: 0rem !important;
+    }
+    .user_edit_list ul li:nth-child(10  ) {
+        margin-left: 0rem !important;
+    }
+    .search-results{
+        height: 275px;
+        width: 100% !important;
+        background: aqua;
+   
+    }
+    .l-main-content {
+        overflow: scroll;
+    }
+    body{overflow: hidden;}
+    .view_user_btn ul li {
+        margin: 0 6px !important;
+    }
+
 }
 @media(max-width:650px){
 .left_admin_user ul {/* justify-content: start; */flex-wrap: wrap !important;}
+.user_edit_list ul li {
+    width: 100% !important;
+    margin-left: 0px !important;
+}
 }
 @media(max-width:550px){.top_boxes_list 
 .same_boxes {width: 100% !important;}
@@ -447,6 +484,10 @@ margin-bottom: 2rem !important;
 .page_main_top_heading { flex-direction: column;align-items: self-start;}
 .table_box_shad.box_padd {padding: 1rem;}
 .cancel_btn {width: 100% !important;flex-direction: column;}
+}
+.owl-dt-container {
+    width: 369px;
+    height: 296px;
 }
 
 

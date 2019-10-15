@@ -1,0 +1,75 @@
+<app-header></app-header>
+
+<div class="main-contaner">
+    <app-sidebar></app-sidebar>
+    <div class="main_background">
+    <div class="l-main-content">
+        <div class="page_main_top_heading addservicemain">
+            <h1>Edit Booking</h1>
+            <button (click)="goTomanageserviceprovider()" class="btn btn-primary" >Back to listing</button> 
+        </div>
+          
+        
+        <div class="main_sec_shad">
+          <div class="viw_usr_img">
+              <label>image *</label>
+              <img src="../../assets/images/user.png">
+          </div> 
+          <div class="user_edit_list">
+              <ul>
+                  <li>
+                      <label>User *</label>
+                      <input type="text" name="nickName" [(ngModel)]="users.userId.nickName" placeholder="userId" autocomplete="off" >
+                  </li>
+                  <li>
+                    <label>Service *</label>
+                    <input type="text" name="serviceId"  [(ngModel)]="users.serviceId.email"  placeholder="serviceId" autocomplete="off">
+                </li>
+                <li>
+                 <label>Service Ratings *</label>
+                 <input type="text" name="serviceRatings" [(ngModel)]="users.serviceRatings" placeholder="serviceRatings" autocomplete="off">
+                </li>
+                <li>
+                    <label>User Ratings *</label>
+                    <input type="text" name="userRatings" [(ngModel)]="users.userRatings" placeholder="User Ratings" autocomplete="off">
+                   </li>
+                <li>
+                 <label>HouseName *</label>
+                 <input type="text" name="houseName" [(ngModel)]="users.houseName" placeholder="House Name" autocomplete="off">
+             </li>
+             <li>
+                    <label>HouseNo *</label>
+                    <input type="text" name="houseNumber" [(ngModel)]="users.houseNumber" placeholder="House Number" autocomplete="off">
+                </li>
+             <li>
+                    <label>Schedule *</label>
+                    <input type="text" name="schedule" [(ngModel)]="users.schedule" placeholder="schedule" autocomplete="off">
+              </li>
+                
+               <li>
+                    <label>Date *</label>
+                    <input type="text" name="date" [(ngModel)]="users.date" placeholder="Date" autocomplete="off">
+                    </li>      
+              </ul>
+          </div>
+          <div class="view_user_btn">
+              <ul>
+                  <li>
+                    <button (click)="updatebooking(users)">Update</button>
+                </li>
+                <li>
+                    <button>cancel</button>
+                </li>
+              </ul>
+          </div>
+          
+         
+       
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+

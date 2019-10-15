@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       password:this.admin.password
     }  
     this.service.loginUser(form)
-    .subscribe((res):any =>{
+    .subscribe((res:any) =>{
       console.log(res)
     if(res.success){
         this.router.navigate(['/dashboard']);

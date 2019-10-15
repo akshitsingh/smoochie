@@ -7,17 +7,20 @@
     <form #fo="ngForm" (ngSubmit)="onSubmit(fo)">
     <div class="form-group">
       <label for="email">Email address:</label>
-      <input type="email" class="form-control"  name="email" placeholder="Email" #email="ngModel" ngModel>
+      <input type="email" class="form-control"  name="email" placeholder="Email" #email="ngModel" ngModel
+      autocomplete="off" required>
     </div>
 
     <div class="form-group">
         <label for="countrycode">Country Code</label>
-        <input type="text" class="form-control" id="countrycode" name="countrycode" ngModel #countrycode="ngModel" placeholder="Country Code"  >
+        <input type="text" class="form-control" id="countrycode" name="countrycode" ngModel #countrycode="ngModel" placeholder="Country Code" 
+        autocomplete="off" required >
       </div>
       
     <div class="form-group">
         <label for="nickname">NickName</label>
-        <input type="text" class="form-control" id="nickname" name="nickname" #nickname="ngModel" placeholder="NickName" ngModel>
+        <input type="text" class="form-control" id="nickname" name="nickname" #nickname="ngModel" placeholder="NickName" ngModel
+        autocomplete="off" required>
       </div>
 
     <div class="form-group">
@@ -27,35 +30,30 @@
 
     <div class="form-group">
         <label for="pwd">Confirm Password:</label>
-        <input type="confirm password" class="form-control" id="confirmpwd" name="confirmPassword" #confirmPassword="ngModel" placeholder="Confirm Password" ngModel>
+        <input type="confirm password" class="form-control" id="confirmpwd" name="confirmPassword" #confirmPassword="ngModel" placeholder="Confirm Password" ngModel
+        autocomplete="off" required>
       </div>
   
       <div class="form-group">
         <label for="gender">Gender</label>
-        <select class="form-control" id="gender" name="gender" #gender="ngModel" ngModel>
-          <option>male</option>
-          <option>female</option>   
+        <select class="form-control" id="gender" name="gender" ngModel #gender="ngModel" placeholder="selectgender">
+          <option value="male">male</option>
+          <option value="female">female</option>   
         </select>
       </div>
 
       <div class="form-group">
         <label for="area">Area/Country</label>
-        <input type="text" class="form-control" id="area" name="area" #area="ngModel" placeholder="area/region/country" ngModel>
+        <input type="text" class="form-control" id="area" name="area" #area="ngModel" placeholder="area/region/country" ngModel
+        autocomplete="off" required>
       </div>
 
       <div class="form-group">
         <label for="area">City</label>
-        <input type="text" class="form-control" id="cityt" name="city" #city="ngModel" placeholder="City" ngModel>
+        <input type="text" class="form-control" id="cityt" name="city" #city="ngModel" placeholder="City" ngModel
+        autocomplete="off" required>
       </div>
-
-      <div class="form-group">
-        <label for="genderpreference">Gender Preference </label>
-        <select class="form-control" id="genderpreference" name="genderpreference" #genderpreference="ngModel" ngModel>
-          <option>male</option>
-          <option>female</option>   
-        </select>
-      </div>
-
+      
       <div class="form-group">
         <label for="outcall">OutCall</label>
         <select class="form-control" id="outcall" name="outcall" #outcall="ngModel" ngModel>

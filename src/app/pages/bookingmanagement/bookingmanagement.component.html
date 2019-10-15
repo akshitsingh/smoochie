@@ -1,31 +1,92 @@
 <app-header></app-header>
- 
+
 <div class="main-contaner">
     <app-sidebar></app-sidebar>
+
     <div class="main_background">
- <div class="table-responsive">
-       <table class="table">
-               <tr>
-                   <th>Profile Pic</th>
-                   <th>Name</th>
-                   <th>Service Ratings</th>
-                   <th>Status</th>
-                   <th>HouseName</th>
-                   <th>HouseNo</th>
-                   <th>Date</th>
-                   <th>Shedule</th>
-               </tr>
-               <tr *ngFor="let user of users">
-                   <td><img [src]="imageurl+user.serviceId.profilePic" alt=""></td>
-                   <td>{{ user.serviceId.firstName }} &nbsp; {{ user.serviceId.lastName }}</td>
-                   <td>{{ user.serviceId.serviceRatings }}</td>
-                   <td>{{ user.status }}</td>
-                   <td>{{ user.houseName }}</td>
-                   <td>{{ user.houseNumber }}</td>
-                   <td>{{ user.date | date 'YYYY-MM-DDTHH:mm' }}</td>
-                   <td>{{ user.schedule }}</td>
-               </tr>
-       </table>
-  </div>
-  </div>
-  </div>
+            <div class="l-main-content">
+                    <div class="page_main_top_heading ">
+                        <h1>booking Management</h1>
+                    </div>
+                    <div class="sec_add_btn">
+                        <button routerLink="createbooking">Create New</button>
+                      </div>
+        <div class="search-box">
+                <form #searchForm = "ngForm" (ngSubmit)="getBooking(searchForm)">
+                    <div class="form-group">
+                        
+                    <h4>From:</h4> <input id="bookingFrom" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1"
+                   name="bookingFrom" ngModel #dt1="ngModel"  placeholder="Date Time" 
+                    >
+                     <owl-date-time #dt1  ></owl-date-time>
+                    <h4>To: </h4>
+                    <input [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" 
+                name="bookingTo" ngModel #dt2="ngModel" placeholder="Date Time">
+                     <div [hidden]="invaliddate" class="alert alert-danger">
+                         invalid date !
+                     </div>
+                     <owl-date-time #dt2></owl-date-time>
+                         
+                    </div>
+
+                    <div class="form-group">
+                        <select name="status" class="form-control" style="padding: 15px!important;
+                        margin-top: 25px;" ngModel #statusValue="ngModel">
+                        
+                        <option value="" selected> All </option>
+                        <option value="1">Confirmed</option>
+                        <option value="2">closed</option>
+                        <option value="3">Pending</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary"   >Search</button>
+                  </form>   
+        </div>
+         
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>Profile Pic</th>
+                    <th>Service</th>
+                    <th>User</th>
+                    <th>Service Ratings</th>
+                    <th>
+                        Status
+                    </th>
+                    <th>HouseName</th>
+                    <th>HouseNo</th>
+                    <th>Date</th>
+                    <th>Shedule</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let user of users">
+                    <td><img [src]="imageurl+user.serviceId.profilePic" alt=""></td>
+                    <td>{{ user.serviceId.firstName }} &nbsp; {{ user.serviceId.lastName }}</td>
+                    <td>{{ user.userId.nickName }}</td>
+                    <td>{{ user.serviceId.serviceRatings }}</td>
+                    <td>{{ user.status }}</td>
+                    <td>{{ user.houseName }}</td>
+                    <td>{{ user.houseNumber }}</td>
+                    <td>{{ user.date | date}}</td>
+                    <td>{{ user.schedule | date:' dd MMMM h:mm a'}}</td>
+                    <td>
+                        <div class="tbl_acti_btn">
+                            <ul>
+                                    <li>
+                                            <i (click)="viewUser()" class="fa fa-eye"></i>
+                                    </li>
+                                    <li>
+                                            <i (click)="editBookingmanagement(user._id)" class="fa fa-pencil"></i>
+                                    </li>
+                                    <li>
+                                            <i (click)="deleteUser()" class="fa fa-trash"></i>
+                                    </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>

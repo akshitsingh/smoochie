@@ -19,7 +19,7 @@ export class EditserviceusersComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
       console.log("params",params.id);   
-      this.api.getManageServiceProvider(params.id).subscribe((res:any)=>{
+      this.api. getParticularManageServiceProvider(params.id).subscribe((res:any)=>{
           this.users= res['data'];
 // this.users.email = res.data.email
         console.log("res",this.users);
